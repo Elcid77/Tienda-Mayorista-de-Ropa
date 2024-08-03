@@ -27,9 +27,7 @@ public/
 .yarn/
 
 # IDE specific files
-
 .vscode/
-
 
 # System files
 .DS_Store

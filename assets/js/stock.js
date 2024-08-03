@@ -44,10 +44,10 @@ function eliminarPrenda() {
 
     let indice = stock.findIndex(item => item.id === id);
     if (indice !== -1) {
-        let confirmar= confirm("¿Estás seguro de que quieres eliminar la prenda?")
-        if(confirmar){
-        stock.splice(indice, 1);
-        alert("Prenda eliminada exitosamente.");
+        let confirmar = confirm("¿Estás seguro de que quieres eliminar la prenda?")
+        if (confirmar) {
+            stock.splice(indice, 1);
+            alert("Prenda eliminada exitosamente.");
         }
     } else {
         alert("Prenda no encontrada.");
