@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock de Prendas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!--
 
-       Lista de prendas cantidad, precio mayorista, descripción... 
-    -->
-    
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="ingresos.html">Ingresos</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+
+    <h1>Stock de Prendas</h1>
+    <table id="stockTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Prenda</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se agregarán dinámicamente desde JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Modal para editar prenda -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Editar Prenda</h2>
+            <form id="formEditarPrenda">
+                <input type="hidden" id="editId">
+                <label for="editTipoPrenda">Tipo de Prenda:</label>
+                <input type="text" id="editTipoPrenda" required><br>
+
+                <label for="editCantidad">Cantidad:</label>
+                <input type="number" id="editCantidad" required><br>
+
+                <label for="editCosto">Costo:</label>
+                <input type="number" id="editCosto" step="0.01" required><br>
+
+                <label for="editImagen">Cambiar Imagen de la Prenda:</label>
+                <input type="file" id="editImagen" accept="image/*"><br>
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/stock.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Nuevas Prendas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="ingresos.html">Ingresos</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+
+
+
+    <h1>Ingresar Nueva Prenda al Stock</h1>
+    <form id="formularioPrenda">
+        <label for="idPrenda">ID de la Prenda:</label>
+        <input type="number" id="idPrenda" required><br>
+
+        <label for="tipoPrenda">Tipo de Prenda:</label>
+        <input type="text" id="tipoPrenda" required><br>
+
+        <label for="cantidadPrenda">Cantidad:</label>
+        <input type="number" id="cantidadPrenda" required><br>
+
+        <label for="costoPrenda">Costo:</label>
+        <input type="number" id="costoPrenda" step="0.01" required><br>
+
+        <label for="imagenPrenda">Subir Imagen de la Prenda:</label>
+        <input type="file" id="imagenPrenda" accept="image/*" required><br>
+
+        <button type="submit">Agregar Prenda</button>
+    </form>
+    <script src="../assets/js/ingresos.js"></script>
+</body>
+</html>
