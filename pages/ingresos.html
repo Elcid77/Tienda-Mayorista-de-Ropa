@@ -4,41 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingreso de Nuevas Prendas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <img class="logo" src="../assets/img/logo.png" alt="logo">
+                <a class="navbar-brand" href="../index.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="ingresos.html">Ingresos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="stock.html">Stock</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prendas.html">Prendas</a></li>
+                    </ul>
+                    <div class="ml-auto text-light d-flex align-items-center tasa-cambio">
+                        <div class="mx-3">
+                            <i class="fas fa-dollar-sign me-1"></i>
+                            <span id="tasa-dolar">Dólar: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-money-bill-wave me-1"></i>
+                            <span id="tasa-peso-uruguayo">Peso Uruguayo: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-coins me-1"></i>
+                            <span id="tasa-real">Real: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-hand-holding-usd me-1"></i>
+                            <span id="tasa-peso-argentino">Peso Argentino: Cargando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="ingresos.html">Ingresos</a></li>
-            <li><a href="stock.html">Stock</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-        </ul>
-    </nav>
+    <div class="container mt-5">
+        <h1 class=" mb-4">Ingresar Nueva Prenda al Stock</h1>
+        <form id="formularioPrenda" class="claseFormI">
+            <div class="form-group">
+                <label for="idPrenda">ID de la Prenda:</label>
+                <input type="number" id="idPrenda" class="form-control" required>
+            </div>
 
+            <div class="form-group">
+                <label for="tipoPrenda">Tipo de Prenda:</label>
+                <input type="text" id="tipoPrenda" class="form-control" required>
+            </div>
 
+            <div class="form-group">
+                <label for="cantidadPrenda">Cantidad:</label>
+                <input type="number" id="cantidadPrenda" class="form-control" required>
+            </div>
 
-    <h1>Ingresar Nueva Prenda al Stock</h1>
-    <form id="formularioPrenda">
-        <label for="idPrenda">ID de la Prenda:</label>
-        <input type="number" id="idPrenda" required><br>
+            <div class="form-group">
+                <label for="costoPrenda">Costo:</label>
+                <input type="number" id="costoPrenda" step="0.01" class="form-control" required>
+            </div>
 
-        <label for="tipoPrenda">Tipo de Prenda:</label>
-        <input type="text" id="tipoPrenda" required><br>
+            
 
-        <label for="cantidadPrenda">Cantidad:</label>
-        <input type="number" id="cantidadPrenda" required><br>
+            <div class="form-group">
+                <label for="imagenPrenda">Subir Imagen de la Prenda:</label>
+                <div class="input-group">
+                    <input type="file" id="imagenPrenda" class="form-control-file" accept="image/*" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="iconoImagen"><i class="fas fa-upload"></i></span>
+                    </div>
+                </div>
+                <img id="preview" src="" alt="Imagen previa" class="img-preview mt-2" style="display: none;">
+            </div>
+            
 
-        <label for="costoPrenda">Costo:</label>
-        <input type="number" id="costoPrenda" step="0.01" required><br>
+            <button type="submit" class="btn btn-primary">Agregar Prenda</button>
+        </form>
+    </div>
 
-        <label for="imagenPrenda">Subir Imagen de la Prenda:</label>
-        <input type="file" id="imagenPrenda" accept="image/*" required><br>
-
-        <button type="submit">Agregar Prenda</button>
-    </form>
     <script src="../assets/js/ingresos.js"></script>
+    <script src="../assets/js/cambio.js"></script>
 </body>
 </html>

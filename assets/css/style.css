@@ -1,3 +1,21 @@
+
+*body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --rojo-oscuro: #8B0000;
+    --naranja-quemado: #FF4500;
+    --marron: #8B4513;
+    --verde-oliva: #556B2F;
+    --amarillo-mostaza: #DAA520;
+    --oro: #FFD700;
+}
+
+
 /* Estilos generales del cuerpo de la página */
 body {
     font-family: Arial, sans-serif; /* Establece la fuente de texto a Arial, o a sans-serif como fuente secundaria si Arial no está disponible */
@@ -27,14 +45,14 @@ td {
 
 /* Estilo para las celdas de encabezado de la tabla */
 th {
-    background-color: #4CAF50; /* Establece un color de fondo verde para las celdas de encabezado */
+    background-color: var(--verde-oliva); /* Establece un color de fondo verde para las celdas de encabezado */
     color: white; /* Cambia el color del texto de las celdas de encabezado a blanco */
 }
 
 /* Estilo general para todos los botones */
 button {
     padding: 5px 10px; /* Añade relleno al botón: 5px arriba y abajo, 10px a los lados */
-    background-color: #4CAF50; /* Establece el color de fondo del botón a verde */
+    background-color: var(--verde-oliva); /* Establece el color de fondo del botón a verde */
     color: white; /* Define el color del texto del botón a blanco */
     border: none; /* Elimina cualquier borde del botón */
     cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del botón */
@@ -43,7 +61,7 @@ button {
 
 /* Estilo de botón cuando se pasa el cursor sobre él */
 button:hover {
-    background-color: #45a049; /* Cambia el color de fondo a un tono verde más oscuro al pasar el cursor */
+    background-color: var(--verde-oliva);  /* Cambia el color de fondo a un tono verde más oscuro al pasar el cursor */
 }
 
 /* Estilo para todos los formularios */
@@ -67,7 +85,7 @@ button[type="submit"] {
 
 /* Estilo específico para botones de tipo "submit" */
 button[type="submit"] {
-    background-color: #4CAF50; /* Establece el color de fondo del botón a verde */
+    background-color:var(--verde-oliva);  /* Establece el color de fondo del botón a verde */
     color: white; /* Define el color del texto del botón a blanco */
     border: none; /* Elimina cualquier borde del botón */
     cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima del botón */
@@ -75,7 +93,7 @@ button[type="submit"] {
 
 /* Estilo de botón "submit" cuando se pasa el cursor sobre él */
 button[type="submit"]:hover {
-    background-color: #45a049; /* Cambia el color de fondo a un tono verde más oscuro al pasar el cursor */
+    background-color:var(--verde-oliva);  /* Cambia el color de fondo a un tono verde más oscuro al pasar el cursor */
 }
 
 /* Estilo para todas las imágenes */
@@ -87,7 +105,7 @@ img {
 
 /* Estilo del menú de navegación */
 .navbar {
-    background-color: #45a049; /* Establece el color de fondo de la barra de navegación a verde oscuro */
+    background-color: var(--verde-oliva);  /* Establece el color de fondo de la barra de navegación a verde oscuro */
     overflow: hidden; /* Oculta cualquier contenido que desborde el contenedor */
 }
 
@@ -118,4 +136,276 @@ img {
 .navbar a:hover {
     background-color: #4b8017; /* Cambia el color de fondo a un tono más oscuro al pasar el cursor */
     color: white; /* Mantiene el color del texto a blanco */
+}
+
+.card {
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Carrito de compra*/
+/* Estilo inicial del carrito */
+.carrito {
+    width: 200px; /* Tamaño inicial */
+    height: 200px;
+    background-color: #f8f9fa; /* Color de fondo */
+    border-radius: 50%; /* Hacer el carrito redondo */
+    position: fixed; /* Posición fija */
+    bottom: 20px; /* Posicionado en la parte inferior */
+    right: 20px; /* A la derecha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animación */
+  }
+  
+  /* Al pasar el ratón sobre el carrito */
+  .carrito:hover {
+    transform: scale(1.2); /* Aumenta el tamaño en un 20% */
+    background-color: #e7b11d; /* Cambia el color de fondo */
+  }
+  
+  /* Icono del carrito */
+  .carrito i {
+    font-size: 24px;
+    color: #343a40;
+  }
+  
+  /* Al hacer clic en el carrito (mejora usabilidad) */
+  .carrito:active {
+    transform: scale(1.1); /* Reduce ligeramente al hacer clic */
+    background-color: #0056b3;
+  }
+
+    /*Logo */
+
+    .logo{
+
+        width: 100px;
+    }
+
+   /* Estilos para el header inferior con imagen de fondo */
+.header-inferior {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header-inferior img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-inferior h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-icons {
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Estilos para mejorar el bloque de tasas de cambio */
+.tasa-cambio {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para destacar el bloque */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.tasa-cambio div {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.tasa-cambio i {
+    color: #ffd700; /* Color dorado para los iconos */
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.tasa-cambio span {
+    color: #ffffff;
+}
+
+/* Estilo para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la ventana del navegador */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    z-index: 1000; /* Capa alta para estar sobre otros elementos */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro y semi-transparente */
+    padding: 0;
+    align-items: flex-end; /* Posicionar abajo */
+    justify-content: center; /* Centrado horizontal */
+    transition: opacity 0.3s ease-in-out; /* Animación suave */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease-out; /* Animación para deslizarse desde abajo */
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Animación para que el modal se deslice desde abajo */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Para hacer visible el modal */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+/*Vista previa de imagen a ingresar*/
+
+.img-preview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#formularioPrenda {
+    background-color: #fff; /* Fondo blanco para el formulario */
+    padding: 30px; /* Espacio interior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 400px; /* Ancho del formulario */
+    max-width: 90%; /* Asegura que no exceda el 90% del ancho de la pantalla */
 }

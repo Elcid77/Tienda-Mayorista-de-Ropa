@@ -5,18 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock de Prendas</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="ingresos.html">Ingresos</a></li>
-            <li><a href="stock.html">Stock</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <img class="logo" src="../assets/img/logo.png" alt="logo">
+                <a class="navbar-brand" href="../index.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="ingresos.html">Ingresos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stock</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prendas.html">Prendas</a></li>
+                    </ul>
+                    <!-- Bloque de tasas de cambio mejorado -->
+                    <div class="ml-auto text-light d-flex align-items-center tasa-cambio">
+                        <div class="mx-3">
+                            <i class="fas fa-dollar-sign me-1"></i>
+                            <span id="tasa-dolar">Dólar: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-money-bill-wave me-1"></i>
+                            <span id="tasa-peso-uruguayo">Peso Uruguayo: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-coins me-1"></i>
+                            <span id="tasa-real">Real: Cargando...</span>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fas fa-hand-holding-usd me-1"></i>
+                            <span id="tasa-peso-argentino">Peso Argentino: Cargando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <h1>Stock de Prendas</h1>
     <table id="stockTable">
@@ -60,5 +90,7 @@
     </div>
 
     <script src="../assets/js/stock.js"></script>
+     <!-- Incluye tu archivo JavaScript -->
+     <script src="../assets/js/cambio.js"></script> <!-- Asegúrate de que esta ruta sea correcta -->
 </body>
 </html>
