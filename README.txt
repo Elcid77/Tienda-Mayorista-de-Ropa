@@ -45,3 +45,7 @@ Alertas y Notificaciones: El sistema incluye una función de alertas que notific
 Funciones Administrativas: En futuras versiones, el sistema permitirá a los administradores visualizar el importe total invertido en el stock y calcular la posible ganancia, mejorando la gestión financiera del inventario. Además, las compras realizadas por los usuarios (minoristas) impactarán directamente en el stock, permitiendo calcular la ganancia real de las ventas.
 
 Gracias. Esto es todo por el momento.
+
+ENTREGA FINAL
+
+El sistema simula un CRUD para una tienda de ropa, donde el ingreso de prendas está debidamente validado. La información del stock se almacena en localStorage. Al agregar prendas al carrito, se actualiza el stock en tiempo real al realizar una compra. También se utiliza la biblioteca SweetAlert en la galería de prendas y en el carrito. Además, he consumido una API para obtener la visualización de la moneda, utilizando FETCH y ASYNC/AWAIT.
