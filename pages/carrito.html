@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
+
 <body>
 
 
@@ -26,7 +28,7 @@
                         <li class="nav-item"><a class="nav-link" href="ingresos.html">Ingresos</a></li>
                         <li class="nav-item"><a class="nav-link" href="stock.html">Stock</a></li>
                         <li class="nav-item"><a class="nav-link" href="prendas.html">Prendas</a></li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -40,8 +42,8 @@
     </header>
 
     <div class="container mt-5">
-        
-        
+
+
         <!-- Tabla donde se mostrarán las prendas del carrito -->
         <table class="table table-bordered">
             <thead>
@@ -57,13 +59,13 @@
                 <!-- Las filas del carrito se agregarán aquí mediante JavaScript -->
             </tbody>
         </table>
-        
+
         <!-- Total de la compra -->
         <div class="d-flex justify-content-between align-items-center">
             <h3 id="total-compra">Total: $0.00</h3>
             <button id="anular-compra" class="btn btn-danger">Anular Compra</button>
         </div>
-        
+
         <!-- Botón para realizar la compra -->
         <div class="mt-3">
             <button id="realizar-compra" class="btn btn-success">Realizar Compra</button>
@@ -74,4 +76,5 @@
     <script src="../assets/js/carrito.js"></script> <!-- Asegúrate de que esta ruta sea correcta -->
 
 </body>
+
 </html>

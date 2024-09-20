@@ -3,10 +3,10 @@ function mostrarStock() {
     // Selecciona el cuerpo de la tabla con id 'stockTable'
     const stockTableBody = document.querySelector("#stockTable tbody");
 
-    // Limpia el contenido actual de la tabla
+ 
     stockTableBody.innerHTML = "";
 
-    // Obtiene el stock almacenado en localStorage y lo convierte en un array de objetos
+   
     let stock = JSON.parse(localStorage.getItem('stock')) || [];
 
     // Recorre cada item del array de stock
@@ -49,13 +49,13 @@ function editarPrenda(id) {
     }
 }
 
-// Abre el modal
+
 function abrirModal() {
     const modal = document.getElementById('modalEditar');
     modal.style.display = 'block'; // Muestra el modal
 }
 
-// Cierra el modal
+
 function cerrarModal() {
     const modal = document.getElementById('modalEditar');
     modal.style.display = 'none'; // Oculta el modal

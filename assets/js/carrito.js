@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Obtener el carrito del localStorage
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-        // Verificar que el carrito es un array válido
+       
         if (!Array.isArray(carrito)) {
             throw new Error('El carrito no es un array válido.');
         }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Bucle para generar las filas de la tabla del carrito
         carrito.forEach((prenda, index) => {
-            // Validar que la prenda tenga los atributos requeridos
+           
             if (!prenda.tipoPrenda || !prenda.cantidadCarrito || !prenda.costoProducto || !prenda.imagen) {
                 console.warn(`Prenda con datos incompletos en el carrito en índice ${index}:`, prenda);
                 return;
@@ -37,41 +37,38 @@ document.addEventListener('DOMContentLoaded', function () {
             img.style.width = '100px';
             imgTd.appendChild(img);
 
-            // Crear la celda para el nombre
+         
             const nombreTd = document.createElement('td');
             nombreTd.textContent = prenda.tipoPrenda;
 
-            // Crear la celda para la cantidad
+           
             const cantidadTd = document.createElement('td');
             cantidadTd.textContent = prenda.cantidadCarrito;
 
-            // Crear la celda para el precio unitario
             const precioTd = document.createElement('td');
             precioTd.textContent = `$${prenda.costoProducto}`;
 
-            // Crear la celda para el total por prenda
             const totalTd = document.createElement('td');
             const totalPorPrenda = prenda.cantidadCarrito * prenda.costoProducto;
             totalTd.textContent = `$${totalPorPrenda.toFixed(2)}`;
 
-            // Sumar al total de la compra
             totalCompra += totalPorPrenda;
 
-            // Añadir las celdas a la fila
+         
             fila.appendChild(imgTd);
             fila.appendChild(nombreTd);
             fila.appendChild(cantidadTd);
             fila.appendChild(precioTd);
             fila.appendChild(totalTd);
 
-            // Añadir la fila al cuerpo de la tabla
+         
             carritoBody.appendChild(fila);
         });
 
-        // Mostrar el total de la compra
+    
         totalCompraElem.textContent = `Total: $${totalCompra.toFixed(2)}`;
 
-        // Manejar el botón de anular compra y reponer stock
+       
         document.getElementById('anular-compra').addEventListener('click', function () {
             Swal.fire({
                 title: '¿Estás seguro?',
@@ -82,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelButtonText: 'Cancelar',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    reponerStock(); // Reponer las prendas al stock
-                    localStorage.removeItem('carrito'); // Vaciar el carrito
-                    location.reload(); // Recargar la página para actualizar la tabla
+                    reponerStock(); 
+                    localStorage.removeItem('carrito'); 
+                    location.reload();
                 }
             });
         });
 
-        // Manejar el botón de realizar compra
+        
         document.getElementById('realizar-compra').addEventListener('click', finalizarCompra);
 
     } catch (error) {
@@ -149,12 +146,12 @@ function reponerStock() {
         carrito.forEach(itemCarrito => {
             const productoEnStock = stock.find(prenda => prenda.id === itemCarrito.id);
             if (productoEnStock) {
-                // Reponer la cantidad que estaba en el carrito al stock
+               
                 productoEnStock.cantidad += itemCarrito.cantidadCarrito;
             }
         });
 
-        // Guardar el stock actualizado
+     
         localStorage.setItem('stock', JSON.stringify(stock));
 
         Swal.fire({

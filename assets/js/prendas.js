@@ -2,22 +2,22 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
         const prendasContainer = document.getElementById('prendasContainer');
 
-        // Verificamos si el contenedor de prendas existe
+        
         if (!prendasContainer) {
             throw new Error('El contenedor de prendas no existe en el DOM.');
         }
 
-        // Intentamos obtener el stock desde localStorage
+        
         let stock = JSON.parse(localStorage.getItem('stock')) || [];
 
-        // Verificar si el stock es un array válido
+        
         if (!Array.isArray(stock)) {
             throw new Error('El stock no es un array válido.');
         }
 
         console.log('Contenido del stock:', stock);
 
-        // Verificamos si hay stock disponible
+       
         if (stock.length === 0) {
             Swal.fire({
                 icon: 'info',
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Bucle para generar las tarjetas de las prendas
         stock.forEach((prenda, index) => {
-            // Validar que la prenda tenga los atributos requeridos
+           
             if (!prenda.tipoPrenda || !prenda.cantidad || !prenda.costoProducto || !prenda.imagen) {
                 console.warn(`Prenda con datos incompletos en índice ${index}:`, prenda);
                 return;
@@ -112,7 +112,7 @@ function agregarAlCarrito(prenda, index, stock) {
             // Solo aumentar en 1 la cantidad en el carrito
             if (prenda.cantidad > 0) {
                 productoExistente.cantidadCarrito += 1;
-                prenda.cantidad -= 1; // Reducir el stock de la prenda
+                prenda.cantidad -= 1; 
                 document.getElementById(`cantidad-${index}`).textContent = `Cantidad: ${prenda.cantidad}`;
             } else {
                 Swal.fire({
@@ -123,9 +123,9 @@ function agregarAlCarrito(prenda, index, stock) {
                 return;
             }
         } else {
-            prenda.cantidadCarrito = 1; // Nueva propiedad para controlar la cantidad en el carrito
+            prenda.cantidadCarrito = 1; 
             carrito.push(prenda);
-            prenda.cantidad -= 1; // Reducir el stock de la prenda
+            prenda.cantidad -= 1; 
             document.getElementById(`cantidad-${index}`).textContent = `Cantidad: ${prenda.cantidad}`;
         }
 
